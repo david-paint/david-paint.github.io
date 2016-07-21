@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="jQuery-v3.1.0.min.js"></script>
+	<script>$("head").html("<meta charset=\"UTF-8\">\
+							<title>David Paint</title>\
+							<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\
+							<style></style>")</script>
+	</head>
+<body>
+
+<script>
+	$("style").html("body { background: linear-gradient(to right, #00e5ff, #00e676); margin: auto; max-width: 736px; font-size: 0px }") // .html
+			.append("span { display: block; margin: auto }") // .append("span { background: rgba(0, 0, 0, 0.1) }") // .append
+
+	// #icons HTM
+	$("body").html("<span id=icons></span>"); var icons = ["david", "paint"]; $(icons).each(function() { // .html
+		$("#icons").append("<a href=\"" + this + "\"><img title=\"" + this[0].toUpperCase() + this.substr(1) + "\" src=\"" + this + ".svg\"></img></a>")}) // .append
+
+	// #icons CSS
+	var w = 42; $("style").append("#icons { width: " + (w * icons.length * 2 + w) + "px }")
+						  .append("#icons img { margin: " + w + "px " + w / 2 + "px; width: " + w + "px }")
+						  .append("#icons a:first-child img { margin-left: " + w + "px } #icons a:last-child img { margin-right: " + w + "px }")
+
+	// #paint HTM
+	href = "http://raw.githubusercontent.com/david-paint/david-paint/master/"
+	$("body").append("<span id=paint></span>"); for (var i = 1; i <= 8; i++) {
+		$("#paint").append("<a href=\"" + href + "a/" + i + ".jpg\"><img class=\"a\" src=\"" + href + "a/" + i   + "\.jpg\"></img></a>")
+				   .append("<a href=\"" + href + "b/" + i + ".jpg\"><img class=\"b\" src=\"" + href + "b/" + i++ + "\.jpg\"></img></a>")
+				   .append("<a href=\"" + href + "b/" + i + ".jpg\"><img class=\"b\" src=\"" + href + "b/" + i   + "\.jpg\"></img></a>")
+				   .append("<a href=\"" + href + "a/" + i + ".jpg\"><img class=\"a\" src=\"" + href + "a/" + i   + "\.jpg\"></img></a>")}
+
+	// #paint CSS
+	$("style").append("#paint { background: white; outline: 1px solid white }")
+			  .append("#paint img { outline: 2px solid white }")
+			  .append("[src*=\"/a/\"] { max-width: 36% } [src*=\"/b/\"] { max-width: 64% }")
+</script>
+
+</body>
+</html>
