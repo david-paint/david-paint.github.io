@@ -1,40 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<head>
-	<script src="jQuery-v3.1.0.min.js"></script>
-	<script>$("head").html("<meta charset=\"UTF-8\">\
-							<title>David Paint</title>\
-							<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\
-							<style></style>")</script>
-	</head>
-<body>
+ <head>
+  <meta charset="utf-8">
+  <title>DAVID 🤔 PAINT 🎨</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
 
-<script>
-	$("style").html("body { background: linear-gradient(to right, #00e5ff, #00e676); margin: auto; max-width: 736px; font-size: 0px }") // .html
-			.append("span { display: block; margin: auto }") // .append("span { background: rgba(0, 0, 0, 0.1) }") // .append
+a       { color: #08f; text-decoration: none }
+a:hover { color: #f08 }
 
-	// #icons HTM
-	$("body").html("<span id=icons></span>"); var icons = ["david", "paint"]; $(icons).each(function() { // .html
-		$("#icons").append("<a href=\"" + this + "\"><img title=\"" + this[0].toUpperCase() + this.substr(1) + "\" src=\"" + this + ".svg\"></img></a>")}) // .append
+body {
+ margin: auto; max-width: 736px; min-width: 320px;
+ background: #08f no-repeat url(data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs=); background-size: cover
+}
 
-	// #icons CSS
-	var w = 42; $("style").append("#icons { width: " + (w * icons.length * 2 + w) + "px }")
-						  .append("#icons img { margin: " + w + "px " + w / 2 + "px; width: " + w + "px }")
-						  .append("#icons a:first-child img { margin-left: " + w + "px } #icons a:last-child img { margin-right: " + w + "px }")
+#head, #foot {
+ margin: auto 23px;
+ text-align: center; color: #555; font: 1.25em -apple-system, BlinkMacSystemFont; font-weight: 900; letter-spacing: 0.025em
+}
 
-	// #paint HTM
-	href = "http://raw.githubusercontent.com/david-paint/david-paint/master/"
-	$("body").append("<span id=paint></span>"); for (var i = 1; i <= 8; i++) {
-		$("#paint").append("<a href=\"" + href + "a/" + i + ".jpg\"><img class=\"a\" src=\"" + href + "a/" + i   + "\.jpg\"></img></a>")
-				   .append("<a href=\"" + href + "b/" + i + ".jpg\"><img class=\"b\" src=\"" + href + "b/" + i++ + "\.jpg\"></img></a>")
-				   .append("<a href=\"" + href + "b/" + i + ".jpg\"><img class=\"b\" src=\"" + href + "b/" + i   + "\.jpg\"></img></a>")
-				   .append("<a href=\"" + href + "a/" + i + ".jpg\"><img class=\"a\" src=\"" + href + "a/" + i   + "\.jpg\"></img></a>")}
+#head { font-size: 2.5em; margin: auto 47px }
+#body { font-size: 0; min-height: calc(153px * 8); background: #08f }
 
-	// #paint CSS
-	$("style").append("#paint { background: white; outline: 1px solid white }")
-			  .append("#paint img { outline: 2px solid white }")
-			  .append("[src*=\"/a/\"] { max-width: 36% } [src*=\"/b/\"] { max-width: 64% }")
-</script>
+#body img[src^="wide"] { width: 64% }
+#body img[src^="tall"] { width: 36% }
 
-</body>
+  </style>
+ </head>
+ <body>
+
+  <div id="head">
+   <br><a href="test">DAVID&nbsp;🤔</a> <a><span style="letter-spacing: 0.047em">PAINT</span>&nbsp;🎨</a><br><br>
+  </div>
+
+  <div id="body">
+   <a href="src/wide/1.jpg"><img src="wide/1.jpg"></a>
+   <a href="src/tall/1.jpg"><img src="tall/1.jpg"></a>
+   <a href="src/tall/2.jpg"><img src="tall/2.jpg"></a>
+   <a href="src/wide/2.jpg"><img src="wide/2.jpg"></a>
+   <a href="src/wide/3.jpg"><img src="wide/3.jpg"></a>
+   <a href="src/tall/3.jpg"><img src="tall/3.jpg"></a>
+   <a href="src/tall/4.jpg"><img src="tall/4.jpg"></a>
+   <a href="src/wide/4.jpg"><img src="wide/4.jpg"></a>
+   <a href="src/wide/5.jpg"><img src="wide/5.jpg"></a>
+   <a href="src/tall/5.jpg"><img src="tall/5.jpg"></a>
+   <a href="src/tall/6.jpg"><img src="tall/6.jpg"></a>
+   <a href="src/wide/6.jpg"><img src="wide/6.jpg"></a>
+   <a href="src/wide/7.jpg"><img src="wide/7.jpg"></a>
+   <a href="src/tall/7.jpg"><img src="tall/7.jpg"></a>
+   <a href="src/tall/8.jpg"><img src="tall/8.jpg"></a>
+   <a href="src/wide/8.jpg"><img src="wide/8.jpg"></a>
+  </div>
+
+  <div id="foot">
+   <br>DESIGN&nbsp;BY&nbsp;<a>ZAYDEK</a>&nbsp;😏 <span style="letter-spacing: 0.027em">INSPIRED&nbsp;BY&nbsp;<a>VOTEPLZ</a></span><br><br>
+  </div>
+
+ </body>
 </html>
